@@ -8,7 +8,7 @@ function App() {
     if(Mode==='light')
     {
       setmode('dark');
-      document.body.style.backgroundColor='grey'
+      document.body.style.backgroundColor='#042743'
     }else
     {
       setmode('light');
