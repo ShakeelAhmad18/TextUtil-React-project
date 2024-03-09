@@ -4,27 +4,33 @@ export default function TextForm(props) {
     const [text,settext]=useState("")
     const handleClick=()=>{
         let answer=text.toUpperCase()
-        settext(answer)
+        settext(answer);
+        props.showalert('Coverted into UpperCase!','success')
     }
     const handleChange=(event)=> {
         settext(event.target.value)
     }
     const hnadleloclick=()=>{
         let lower=text.toLowerCase()
-        settext(lower)
+        settext(lower);
+        props.showalert('Coverted into lowercase!','success')
+
     }
     const handleclear=()=>{
-        settext(" ")
+        settext(" ");
+        props.showalert('Text Clearned!','success')
     }
     const handleCopy=()=>{
         console.log('it copy')
         var Text=document.getElementById('exampleFormControlTextarea1');
         Text.select();
-        navigator.clipboard.writeText(Text.value)
+        navigator.clipboard.writeText(Text.value);
+        props.showalert('Text Copied!','success')
     }
     const removeextraspaces=()=>{
         let newText=text.split(/[ ]+/)
         settext(newText.join(" "))
+        props.showalert('Extra Spaces removed!','success')
     }
     return(
         <div className="mb-3">
