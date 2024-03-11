@@ -45,12 +45,11 @@ export default function TextForm(props) {
                 <button className="btn btn-primary" onClick={handleclear}>Clear</button>
                 <button className="btn btn-primary mx-1" onClick={handleCopy}>Copy Text</button>
                 <button className="btn btn-primary mx-1" onClick={removeextraspaces}>Remove Extra Spaces</button>
-                
                 </div>
             </div>
             <div className="container mt-1" style={{color: props.mode==='dark'?'white':'black'}}>
                 <h2>Your Text Summary</h2>
-                <p>Charactor: {text.length},Words: {text.split(' ').length}</p>
+                <p>Charactor: {text.length},Words: {text.split(' ').length-1}</p>
                 <p>Minutes Read: {0.008*text.split(' ').length}</p>
                 <h2>Preview</h2>
                 <p>{text.length>0?text:"Enter something in above TEXTBOX to preview it"}</p>
